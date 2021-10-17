@@ -34,10 +34,4 @@ public class SoldierRepository implements Repository<Soldier, Long> {
     public void delete(Soldier entity) {
         store.deleteSoldier(entity.getId());
     }
-
-    @Override
-    public void update(Soldier entity) {
-        store.updateSoldier(entity);
-    }
-
 }

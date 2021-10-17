@@ -30,13 +30,9 @@ public class MilitaryUnitRepository implements Repository<MilitaryUnit, String> 
         store.createMilitaryUnit(entity);
     }
 
+    //TODO implement deletion of MilitaryUnits
     @Override
     public void delete(MilitaryUnit entity) {
-        throw new UnsupportedOperationException("Operation not implemented.");
-    }
-
-    @Override
-    public void update(MilitaryUnit entity) {
         throw new UnsupportedOperationException("Operation not implemented.");
     }
 }
