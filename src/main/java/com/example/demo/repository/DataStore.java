@@ -24,7 +24,7 @@ public class DataStore {
     }
 
     public synchronized Optional<MilitaryUnit> findMilitaryUnit(String name) {
-        return  militaryUnits.stream()
+        return militaryUnits.stream()
                 .filter(profession -> profession.getName().equals(name))
                 .findFirst()
                 .map(CloningUtility::clone);
@@ -77,6 +77,15 @@ public class DataStore {
                 () -> {
                     throw new IllegalArgumentException(
                             String.format("The soldier with id \"%d\" does not exist", id));
+                });
+    }
+
+    public synchronized void deleteMilitaryUnit(String name) throws IllegalArgumentException {
+        findMilitaryUnit(name).ifPresentOrElse(
+                original -> soldiers.remove(original),
+                () -> {
+                    throw new IllegalArgumentException(
+                            "The military unit - " + name + " does not exist");
                 });
     }
 }
