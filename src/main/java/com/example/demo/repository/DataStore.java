@@ -39,23 +39,12 @@ public class DataStore {
                 () -> militaryUnits.add(CloningUtility.clone(militaryUnit)));
     }
 
-    /**
-     * Seeks for all soldiers.
-     *
-     * @return list (can be empty) of all soldiers
-     */
     public synchronized List<Soldier> findAllSoldiers() {
         return soldiers.stream()
                 .map(CloningUtility::clone)
                 .collect(Collectors.toList());
     }
 
-    /**
-     * Seeks for single soldier.
-     *
-     * @param id soldier's id
-     * @return container (can be empty) with soldier
-     */
     public synchronized Optional<Soldier> findSoldier(Long id) {
         return soldiers.stream()
                 .filter(soldier -> soldier.getId().equals(id))
@@ -63,14 +52,12 @@ public class DataStore {
                 .map(CloningUtility::clone);
     }
 
-
     public synchronized void createSoldier(Soldier soldier) throws IllegalArgumentException {
         soldier.setId(findAllSoldiers().stream()
                 .mapToLong(Soldier::getId)
                 .max().orElse(0) + 1);
         soldiers.add(CloningUtility.clone(soldier));
     }
-
 
     public synchronized void updateSoldier(Soldier soldier) throws IllegalArgumentException {
         findSoldier(soldier.getId()).ifPresentOrElse(
@@ -83,7 +70,6 @@ public class DataStore {
                             String.format("The soldier with id \"%d\" does not exist", soldier.getId()));
                 });
     }
-
 
     public synchronized void deleteSoldier(Long id) throws IllegalArgumentException {
         findSoldier(id).ifPresentOrElse(

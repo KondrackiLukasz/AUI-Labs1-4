@@ -12,11 +12,7 @@ import javax.annotation.PostConstruct;
 import java.io.InputStream;
 import java.time.LocalDate;
 
-/**
- * Listener started automatically on CDI application context initialized. Injects proxy to the services and fills
- * database with default content. When using persistence storage application instance should be initialized only during
- * first run in order to init database with starting data. Good place to create first default admin user.
- */
+
 @Component
 public class InitializedData {
 
@@ -25,7 +21,7 @@ public class InitializedData {
     private final MilitaryUnitService militaryUnitService;
 
     @Autowired
-    public InitializedData(SoldierService soldierService,  MilitaryUnitService militaryUnitService) {
+    public InitializedData(SoldierService soldierService, MilitaryUnitService militaryUnitService) {
         this.soldierService = soldierService;
         this.militaryUnitService = militaryUnitService;
     }
@@ -51,9 +47,9 @@ public class InitializedData {
                 .build();
 
         Soldier albert = Soldier.builder()
-                .name("Ollie Haynes")
+                .name("Devin Franklin")
                 .age(22)
-                .rank("Private")
+                .rank("Private First Class")
                 .militaryUnit(u2322)
                 .build();
 
@@ -77,11 +73,11 @@ public class InitializedData {
         soldierService.create(ricky);
     }
 
-    @SneakyThrows
-    private byte[] getResourceAsByteArray(String name) {
-        try (InputStream is = this.getClass().getResourceAsStream(name)) {
-            return is.readAllBytes();
-        }
-    }
+//    @SneakyThrows
+//    private byte[] getResourceAsByteArray(String name) {
+//        try (InputStream is = this.getClass().getResourceAsStream(name)) {
+//            return is.readAllBytes();
+//        }
+//    }
 
 }
