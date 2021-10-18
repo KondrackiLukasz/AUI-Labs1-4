@@ -4,13 +4,10 @@ import com.example.demo.entity.MilitaryUnit;
 import com.example.demo.entity.Soldier;
 import com.example.demo.service.MilitaryUnitService;
 import com.example.demo.service.SoldierService;
-import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.io.InputStream;
-import java.time.LocalDate;
 
 
 @Component
@@ -80,12 +77,4 @@ public class InitializedData {
         soldierService.create(lauren);
         soldierService.create(ricky);
     }
-
-//    @SneakyThrows
-//    private byte[] getResourceAsByteArray(String name) {
-//        try (InputStream is = this.getClass().getResourceAsStream(name)) {
-//            return is.readAllBytes();
-//        }
-//    }
-
 }
