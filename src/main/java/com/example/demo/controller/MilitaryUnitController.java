@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("api/militaryUnits")
@@ -70,4 +71,9 @@ public class MilitaryUnitController {
             return ResponseEntity.notFound().build();
         }
     }
-}
+
+    @GetMapping("{name}/soldiers")
+    public ResponseEntity<GetSoldiersResponse> getSoldiersFromUnit(@PathVariable("name") String name) {
+        return ResponseEntity.ok(GetSoldiersResponse.entityToDtoMapper().apply(soldierService.findAll().stream().filter(soldier -> soldier.getMilitaryUnit().getName().equals(name)).collect(Collectors.toUnmodifiableList())));
+
+    }}

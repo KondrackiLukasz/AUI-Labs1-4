@@ -6,7 +6,7 @@ GET http://localhost:8080/api/soldiers/1
 
 ###
 
-GET http://localhost:8080/api/soldiers/6
+GET http://localhost:8080/api/soldiers/7
 
 ###
 
@@ -66,5 +66,9 @@ Content-Type: application/json
 {
   "maxCapacity": 100
 }
+
+###
+
+GET http://localhost:8080/api/militaryUnits/4432/soldiers
 
 ###
