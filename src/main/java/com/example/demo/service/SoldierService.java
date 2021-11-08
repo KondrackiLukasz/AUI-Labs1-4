@@ -5,6 +5,7 @@ import com.example.demo.repository.SoldierRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,18 +19,25 @@ public class SoldierService {
     }
 
     public Optional<Soldier> find(Long id) {
-        return repository.find(id);
+        return repository.findById(id);
     }
 
     public List<Soldier> findAll() {
         return repository.findAll();
     }
 
-    public void create(Soldier soldier) {
-        repository.create(soldier);
+    @Transactional
+    public Soldier create(Soldier soldier) {
+        return repository.save(soldier);
     }
 
+    @Transactional
+    public void update(Soldier soldier) {
+        repository.save(soldier);
+    }
+
+    @Transactional
     public void delete(Long soldier) {
-        repository.delete(repository.find(soldier).orElseThrow());
+        repository.deleteById(soldier);
     }
 }
