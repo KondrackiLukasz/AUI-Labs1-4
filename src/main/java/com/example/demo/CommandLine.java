@@ -1,23 +1,18 @@
 package com.example.demo;
 
-import com.example.demo.entity.Soldier;
 import com.example.demo.service.MilitaryUnitService;
-import com.example.demo.service.SoldierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 @Component
 public class CommandLine implements CommandLineRunner {
-    private SoldierService soldierService;
     private MilitaryUnitService militaryUnitService;
 
     @Autowired
-    public CommandLine(SoldierService soldierService, MilitaryUnitService militaryUnitService) {
-        this.soldierService = soldierService;
+    public CommandLine(MilitaryUnitService militaryUnitService) {
         this.militaryUnitService = militaryUnitService;
     }
 

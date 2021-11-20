@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Getter
 @Setter
@@ -22,8 +21,4 @@ public class MilitaryUnit implements Serializable {
 
     @JoinColumn(name = "max_capacity")
     private int maxCapacity;
-
-    @OneToMany(mappedBy = "militaryUnit", cascade = CascadeType.REMOVE)
-    @ToString.Exclude
-    private List<Soldier> soldiers;
 }

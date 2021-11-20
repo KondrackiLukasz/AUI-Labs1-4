@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.MilitaryUnit;
+import com.example.demo.event.repository.MilitaryUnitEventRepository;
 import com.example.demo.repository.MilitaryUnitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,10 +13,12 @@ import java.util.Optional;
 @Service
 public class MilitaryUnitService {
     private MilitaryUnitRepository repository;
+    private MilitaryUnitEventRepository eventRepository;
 
     @Autowired
-    public MilitaryUnitService(MilitaryUnitRepository repository) {
+    public MilitaryUnitService(MilitaryUnitRepository repository, MilitaryUnitEventRepository eventRepository) {
         this.repository = repository;
+        this.eventRepository = eventRepository;
     }
 
     public Optional<MilitaryUnit> find(String name) {
@@ -27,8 +30,9 @@ public class MilitaryUnitService {
     }
 
     @Transactional
-    public MilitaryUnit create(MilitaryUnit militaryUnit) {
-        return repository.save(militaryUnit);
+    public void create(MilitaryUnit militaryUnit) {
+        repository.save(militaryUnit);
+        eventRepository.save(militaryUnit);
     }
 
     @Transactional
@@ -36,8 +40,9 @@ public class MilitaryUnitService {
         repository.save(militaryUnit);
     }
 
-    @Transactional //TODO should it delete also soldiers?
-    public void delete(String militaryUnit) {
-        repository.deleteById(militaryUnit);
+    @Transactional
+    public void delete(MilitaryUnit militaryUnit) {
+        eventRepository.delete(militaryUnit);
+        repository.delete(militaryUnit);
     }
 }

@@ -1,7 +1,6 @@
 package com.example.demo.dto;
 
 import com.example.demo.entity.MilitaryUnit;
-import com.example.demo.entity.Soldier;
 import lombok.*;
 
 import java.util.function.BiFunction;

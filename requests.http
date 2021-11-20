@@ -1,51 +1,12 @@
-GET http://localhost:8080/api/soldiers
+GET http://localhost:8081/api/militaryUnits
 
 ###
 
-GET http://localhost:8080/api/soldiers/1
+GET http://localhost:8081/api/militaryUnits/2137
 
 ###
 
-GET http://localhost:8080/api/soldiers/7
-
-###
-
-POST http://localhost:8080/api/soldiers
-Content-Type: application/json
-
-{
-  "name": "Johnny Test",
-  "rank": "private",
-  "age": 18,
-  "militaryUnit": "4432"
-}
-
-###
-
-DELETE http://localhost:8080/api/soldiers/5
-
-###
-
-PUT http://localhost:8080/api/soldiers/6
-Content-Type: application/json
-
-{
-  "name": "Jane Test",
-  "rank": "Sergeant",
-  "age": 29
-}
-
-###
-
-GET http://localhost:8080/api/militaryUnits
-
-###
-
-GET http://localhost:8080/api/militaryUnits/2137
-
-###
-
-POST http://localhost:8080/api/militaryUnits
+POST http://localhost:8081/api/militaryUnits
 Content-Type: application/json
 
 {
@@ -55,20 +16,15 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/militaryUnits/4432
+DELETE http://localhost:8081/api/militaryUnits/2137
 
 ###
 
 
-PUT http://localhost:8080/api/militaryUnits/2137
+PUT http://localhost:8081/api/militaryUnits/2137
 Content-Type: application/json
 
 {
   "maxCapacity": 100
 }
-
-###
-
-GET http://localhost:8080/api/militaryUnits/4432/soldiers
-
 ###
