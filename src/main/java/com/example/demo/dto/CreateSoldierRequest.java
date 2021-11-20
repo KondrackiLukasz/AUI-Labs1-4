@@ -25,7 +25,6 @@ public class CreateSoldierRequest {
 
     private String militaryUnit;
 
-    // TODO might be not valid
     public static Function<CreateSoldierRequest, Soldier> dtoToEntityMapper(Supplier<MilitaryUnit> militaryUnitSupplier) {
         return request -> Soldier.builder()
                 .name(request.getName())

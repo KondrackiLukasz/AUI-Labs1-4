@@ -1,10 +1,11 @@
 package com.example.demo.entity;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -12,7 +13,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
-@EqualsAndHashCode
 @Entity
 @Table(name = "soldiers")
 public class Soldier implements Serializable {
@@ -30,4 +30,17 @@ public class Soldier implements Serializable {
     @ManyToOne
     @JoinColumn(name = "military_unit")
     private MilitaryUnit militaryUnit;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Soldier soldier = (Soldier) o;
+        return id != null && Objects.equals(id, soldier.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
+    }
 }

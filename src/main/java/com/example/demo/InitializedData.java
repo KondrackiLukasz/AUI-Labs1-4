@@ -26,10 +26,10 @@ public class InitializedData {
     @PostConstruct
     private synchronized void init() {
 
-        MilitaryUnit u1320 = MilitaryUnit.builder().name("1320").maxCapacity(12).build();
-        MilitaryUnit u2322 = MilitaryUnit.builder().name("2322").maxCapacity(34).build();
-        MilitaryUnit u3321 = MilitaryUnit.builder().name("3321").maxCapacity(43).build();
-        MilitaryUnit u4432 = MilitaryUnit.builder().name("4432").maxCapacity(66).build();
+        MilitaryUnit u1320 = MilitaryUnit.builder().name("1320").build();
+        MilitaryUnit u2322 = MilitaryUnit.builder().name("2322").build();
+        MilitaryUnit u3321 = MilitaryUnit.builder().name("3321").build();
+        MilitaryUnit u4432 = MilitaryUnit.builder().name("4432").build();
 
         militaryUnitService.create(u1320);
         militaryUnitService.create(u2322);

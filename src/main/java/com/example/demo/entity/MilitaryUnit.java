@@ -20,9 +20,6 @@ public class MilitaryUnit implements Serializable {
     @Id
     private String name;
 
-    @JoinColumn(name = "max_capacity")
-    private int maxCapacity;
-
     @OneToMany(mappedBy = "militaryUnit", cascade = CascadeType.REMOVE)
     @ToString.Exclude
     private List<Soldier> soldiers;

@@ -8,10 +8,11 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class SoldierService {
-    private SoldierRepository repository;
+    private final SoldierRepository repository;
 
     @Autowired
     public SoldierService(SoldierRepository repository) {
@@ -20,6 +21,11 @@ public class SoldierService {
 
     public Optional<Soldier> find(Long id) {
         return repository.findById(id);
+    }
+
+    public List<Soldier> findInMilitaryUnit(String militaryUnitName) {
+        return repository.findAll().stream().filter(soldier ->
+                soldier.getMilitaryUnit().getName().equals(militaryUnitName)).collect(Collectors.toUnmodifiableList());
     }
 
     public List<Soldier> findAll() {

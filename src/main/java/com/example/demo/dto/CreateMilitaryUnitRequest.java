@@ -19,7 +19,6 @@ public class CreateMilitaryUnitRequest {
     public static Function<CreateMilitaryUnitRequest, MilitaryUnit> dtoToEntityMapper() {
         return request -> MilitaryUnit.builder()
                 .name(request.getName())
-                .maxCapacity(request.getMaxCapacity())
                 .build();
     }
 }
