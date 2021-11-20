@@ -6,7 +6,7 @@ GET http://localhost:8082/api/soldiers/2
 
 ###
 
-GET http://localhost:8082/api/soldiers/7
+GET http://localhost:8082/api/soldiers/6
 
 ###
 
@@ -37,15 +37,6 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8082/api/militaryUnits
-Content-Type: application/json
-
-{
-  "name": "2137",
-  "maxCapacity": 420
-}
-
-###
 
 DELETE http://localhost:8082/api/militaryUnits/4432
 
