@@ -17,7 +17,7 @@ Content-Type: application/json
   "name": "Johnny Test",
   "rank": "private",
   "age": 18,
-  "militaryUnit": "4432"
+  "militaryUnit": "2137"
 }
 
 ###
@@ -69,6 +69,6 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/api/militaryUnits/4432/soldiers
+GET http://localhost:8080/api/militaryUnits/2137/soldiers
 
 ###
