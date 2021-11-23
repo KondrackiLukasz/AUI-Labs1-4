@@ -6,7 +6,7 @@ GET http://localhost:8080/api/soldiers/1
 
 ###
 
-GET http://localhost:8080/api/soldiers/7
+GET http://localhost:8080/api/soldiers/6
 
 ###
 
@@ -55,7 +55,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/militaryUnits/4432
+DELETE http://localhost:8080/api/militaryUnits/2137
 
 ###
 
