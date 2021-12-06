@@ -1,0 +1,20 @@
+{
+  "name": "military-app",
+  "version": "1.0.0-SNAPSHOT",
+  "description": "App for managing military units and soldiers",
+  "keywords": [
+    "Military"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LukaszKond/auiL1/tree/L4"
+  },
+  "license": "MIT",
+  "author": "Łukasz Kondracki",
+  "scripts": {
+    "dev": "http-server -p 8083 -c-1"
+  },
+  "devDependencies": {
+    "http-server": "0.12.3"
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Soldiers and Military Units control app"/>
+    <meta name="keywords" content="Military"/>
+    <meta name="author" content="Łukasz Kondracki"/>
+    <title>Military Units</title>
+    <script type="module" src="militaryUnit_view.js" defer="defer"></script>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>Military App</h1>
+    </header>
+
+    <nav class="navigation-bar">
+        <ul>
+            <li><a href="../index.html">main</a></li>
+            <li><a href="../militaryUnit_list/unit_list.html">Units</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-section">
+        <article class="text--justified">
+            <header><h2 id="militaryUnitName">Military Unit Name</h2></header>
+            <section>
+                <h3>Details</h3>
+                <div class="details-grid">
+                    <label for="maxCapacity">Max Capacity:</label><span id="maxCapacity">Max Capacity</span>
+                </div>
+            </section>
+            <section>
+                <h3>Soldiers</h3>
+                <a id="addSoldier" href="../add_soldier/add_soldier.html">Add Soldier</a>
+                <table class="data-table">
+                    <thead>
+                    <tr>
+                        <th>name</th>
+                        <th>view</th>
+                        <th>edit</th>
+                        <th>delete</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    <tr>
+                        <td>name</td>
+                        <td><a href="#">view</a></td>
+                        <td><a href="#">edit</a></td>
+                        <td>
+                            <button class="ui-button ui-control">delete</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+        </article>
+    </section>
+
+</div>
+</body>
+</html>
