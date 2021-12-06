@@ -1,12 +1,4 @@
-import {
-    getParameterByName,
-    clearElementChildren,
-    createLinkCell,
-    createButtonCell,
-    createTextCell,
-    createImageCell,
-    setTextNode
-} from '../js/dom_utils.js';
+import {getParameterByName, setTextNode} from '../js/dom_utils.js';
 import {getBackendUrl} from '../js/configuration.js';
 
 window.addEventListener('load', () => {

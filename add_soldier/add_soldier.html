@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="Soldiers and Military Units control app" name="description"/>
+    <meta content="Military" name="keywords"/>
+    <meta content="Łukasz Kondracki" name="author"/>
+    <title>Military App</title>
+    <script defer="defer" src="add_soldier.js" type="module"></script>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>Military App</h1>
+    </header>
+
+    <nav class="navigation-bar">
+        <ul>
+            <li><a href="../index.html">main</a></li>
+            <li><a href="../militaryUnit_list/unit_list.html">Units</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-section">
+        <article class="text--justified">
+            <header>
+                <h2>Enter soldier info</h2>
+                <h4 id="militaryUnit">Military Unit: </h4>
+            </header>
+            <form class="soldier__form" id="infoForm">
+                <label for="name">Name:</label>
+                <input class="ui-control ui-input" id="name" name="name"/>
+                <label for="age">Age:</label>
+                <input class="ui-control ui-input" id="age" name="age" type="number"/>
+                <label for="rank">Rank:</label>
+                <input class="ui-control ui-input" id="rank" name="rank"/>
+                <input class="ui-control ui-button" name="Update" type="submit"/>
+            </form>
+        </article>
+    </section>
+</div>
+</body>
+</html>
