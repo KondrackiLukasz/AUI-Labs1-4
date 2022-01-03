@@ -26,9 +26,9 @@ public class CommandLine implements CommandLineRunner {
 //        soldierService.findAll().forEach(System.out::println);
 //        militaryUnitService.findAll().forEach(System.out::println);
 
-        System.out.println("Type help for listing of available commands");
-        String option = "";
-        Scanner scan = new Scanner(System.in);
+//        System.out.println("Type help for listing of available commands");
+//        String option = "";
+//        Scanner scan = new Scanner(System.in);
 //        label:
 //        while (!option.equals("q")) {
 //            option = scan.next();
